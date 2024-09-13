@@ -29,8 +29,11 @@ namespace Pizza_Hutt_R_us
         public PizzaMenu()
         {
             Dal dal = new Dal();
+            //dal.WritetoJson();
+            dal.ReadformJson();
             pizzas = dal.GetPizzas();
-            accompaniments = dal.GetAccompaniments();            
+            accompaniments = dal.GetAccompaniments();  
+            
             ReceiptSides = new ObservableCollection<Sides>();
             InitializeComponent();
             DataContext = this;

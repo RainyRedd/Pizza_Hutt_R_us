@@ -28,9 +28,10 @@ namespace Pizza_Hutt_R_us
         public EditPizza(Pizzas pizza, Action<Pizzas> onSave)
         {
             Dal dal = new Dal();
+            dal.ReadformJson();
             toppings = dal.GetToppings();
             InitializeComponent();
-
+            
             _pizza = pizza;
             toppingsadded = pizza.toppings;
             _onSaveCallback = onSave; // Store the callback
